@@ -32,6 +32,7 @@
 <div id="toasts" class="fixed bottom-4 right-4 space-y-2 z-50"></div>
 
 @auth
+    @if (config('broadcasting.default') === 'reverb')
     <script type="module">
         import Echo from 'https://cdn.jsdelivr.net/npm/laravel-echo@1.16.1/+esm';
         import Pusher from 'https://cdn.jsdelivr.net/npm/pusher-js@8.4.0/+esm';
@@ -59,6 +60,7 @@
             setTimeout(() => el.remove(), 6000);
         });
     </script>
+    @endif
 @endauth
 </body>
 </html>
